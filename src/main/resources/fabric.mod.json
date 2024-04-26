@@ -7,8 +7,13 @@
 	"authors": [
 		"rotgruengelb"
 	],
+	"contributors": [
+		"palm1 (Mod Icons)"
+	],
 	"contact": {
-		"sources": "https://github.com/rotgruengelb/hopperpots"
+		"sources": "https://github.com/rotgruengelb/hopperpots",
+		"issues": "https://github.com/rotgruengelb/hopperpots/issues",
+		"homepage": "https://modrinth.com/mod/hopperpots"
 	},
 	"license": "MIT",
 	"icon": "assets/hopperpots/icon.png",
