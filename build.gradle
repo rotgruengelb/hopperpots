@@ -1,3 +1,4 @@
+//file:noinspection GroovyAssignabilityCheck
 plugins {
 	id 'fabric-loom' version '1.6-SNAPSHOT'
 	id 'maven-publish'
@@ -15,10 +16,6 @@ repositories {
 		url "https://maven.rotgruengelb.net/releases"
 	}
 	mavenCentral()
-}
-
-fabricApi {
-	configureDataGeneration()
 }
 
 dependencies {
@@ -46,15 +43,7 @@ processResources {
 }
 
 loom {
-	splitEnvironmentSourceSets()
 	accessWidenerPath = file("src/main/resources/hopperpots.accesswidener")
-
-	mods {
-		"forestal" {
-			sourceSet sourceSets.main
-			sourceSet sourceSets.client
-		}
-	}
 }
 
 def targetJavaVersion = 17

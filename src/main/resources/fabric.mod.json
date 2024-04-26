@@ -3,7 +3,7 @@
 	"id": "hopperpots",
 	"version": "${version}",
 	"name": "Hopper Pots",
-	"description": "",
+	"description": "Hoppers input items into Decorated Pots, even if they don't directly face into one.",
 	"authors": [
 		"rotgruengelb"
 	],
@@ -16,17 +16,10 @@
 	"entrypoints": {
 		"main": [
 			"net.rotgruengelb.hopperpots.HopperPots"
-		],
-		"client": [
-			"net.rotgruengelb.hopperpots.HopperPotsClient"
 		]
 	},
 	"mixins": [
-		"hopperpots.mixins.json",
-		{
-			"config": "hopperpots.client.mixins.json",
-			"environment": "client"
-		}
+		"hopperpots.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=${loader_version}",
