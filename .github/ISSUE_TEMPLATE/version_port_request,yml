@@ -1,0 +1,43 @@
+name: Version Port Request
+title: "[VERSION] Version Port Request"
+description: Request a Minecraft Version Port
+labels:
+  - version-port
+assignees:
+  - rotgruengelb
+
+inputs:
+  minecraft_version:
+    description: "Minecraft Version"
+    required: true
+  mod_loader:
+    description: "Affected Mod loader"
+    required: true
+    options:
+      - Fabric
+      - Forge
+      - Rift
+      - Fabric API
+      - Fabric Loader
+      - Forge Mod Loader
+      - Fabric Language Kotlin
+      - Fabric Language Scala
+      - Yarn
+      - Custom
+  checklist:
+    description: "Checklist"
+    required: true
+    type: checkboxes
+    options:
+      - label: "I have checked that the requested version is not in the repository, including all branches."
+        required: true
+      - label: "I have checked that the requested version was not already requested, including closed issues."
+        required: true
+      - label: "I have filled out all blanks in the Request Template."
+        required: true
+      - label: "I have clicked these checkboxes without reading them."
+        required: true
+      - label: "I have checked that the requested version is not already being publicly worked on."
+        required: true
+      - label: "I have checked that the requested version is not available on the Projects Distribution Pages (example: Modrinth)."
+        required: true
