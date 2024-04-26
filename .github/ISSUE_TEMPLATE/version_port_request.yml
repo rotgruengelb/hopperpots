@@ -36,15 +36,15 @@ body:
       label: Checklist
       description: "Please confirm the following:"
       options:
-        - label: I have checked that the requested version is not in the repository, including all branches.
+        - label: "I have checked that the requested version is not in the repository, including all branches."
           required: true
-        - label: I have checked that the requested version was not already requested, including closed issues.
+        - label: "I have checked that the requested version was not already requested, including closed issues."
           required: true
-        - label: I have filled out all blanks in the Request Template.
+        - label: "I have filled out all blanks in the Request Template."
           required: true
-        - label: I have clicked these checkboxes without reading them.
+        - label: "I have clicked these checkboxes without reading them."
           required: true
-        - label: I have checked that the requested version is not already being publicly worked on.
+        - label: "I have checked that the requested version is not already being publicly worked on."
           required: true
-        - label: I have checked that the requested version is not available on the Projects Distribution Pages (example: Modrinth).
+        - label: "I have checked that the requested version is not available on the Projects Distribution Pages (example: Modrinth)."
           required: true
