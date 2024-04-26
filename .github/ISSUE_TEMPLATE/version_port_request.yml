@@ -1,43 +1,50 @@
 name: Version Port Request
-title: "[VERSION] Version Port Request"
 description: Request a Minecraft Version Port
+title: "[VERSION] Version Port Request"
 labels:
   - version-port
 assignees:
   - rotgruengelb
 
-inputs:
-  minecraft_version:
-    description: "Minecraft Version"
-    required: true
-  mod_loader:
-    description: "Affected Mod loader"
-    required: true
-    options:
-      - Fabric
-      - Forge
-      - Rift
-      - Fabric API
-      - Fabric Loader
-      - Forge Mod Loader
-      - Fabric Language Kotlin
-      - Fabric Language Scala
-      - Yarn
-      - Custom
-  checklist:
-    description: "Checklist"
-    required: true
-    type: checkboxes
-    options:
-      - label: "I have checked that the requested version is not in the repository, including all branches."
-        required: true
-      - label: "I have checked that the requested version was not already requested, including closed issues."
-        required: true
-      - label: "I have filled out all blanks in the Request Template."
-        required: true
-      - label: "I have clicked these checkboxes without reading them."
-        required: true
-      - label: "I have checked that the requested version is not already being publicly worked on."
-        required: true
-      - label: "I have checked that the requested version is not available on the Projects Distribution Pages (example: Modrinth)."
-        required: true
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to request a version port!
+
+  - type: input
+    id: minecraft_version
+    attributes:
+      label: Minecraft Version
+      description: "Specify the Minecraft version you want to be ported."
+      placeholder: ex. 1.21, 1.20.5
+    validations:
+      required: true
+
+  - type: input
+    id: mod_loader
+    attributes:
+      label: Affected Mod loader
+      description: "Specify the mod loader affected by this version port request."
+      placeholder: ex. Fabric, Forge, Quilt, NeoForge
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following:
+      options:
+        - label: I have checked that the requested version is not in the repository, including all branches.
+          required: true
+        - label: I have checked that the requested version was not already requested, including closed issues.
+          required: true
+        - label: I have filled out all blanks in the Request Template.
+          required: true
+        - label: I have clicked these checkboxes without reading them.
+          required: true
+        - label: I have checked that the requested version is not already being publicly worked on.
+          required: true
+        - label: I have checked that the requested version is not available on the Projects Distribution Pages (example: Modrinth).
+          required: true
