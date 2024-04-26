@@ -1,7 +1,6 @@
 package net.rotgruengelb.hopperpots.mixin;
 
 import net.minecraft.block.BlockEntityProvider;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.HopperBlockEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
@@ -22,35 +21,44 @@ import static net.rotgruengelb.hopperpots.HopperPots.GAMERULE_HOPPER_SPECIAL_BLO
 public abstract class HopperBlockEntityMixin implements BlockEntityProvider {
 
 	@Inject(method = "insert", at = @At("HEAD"), cancellable = true)
-	private static void insert(World world, BlockPos pos, BlockState state, Inventory inventory, CallbackInfoReturnable<Boolean> cir) {
+	private static void insert(World world, BlockPos pos, HopperBlockEntity blockEntity, CallbackInfoReturnable<Boolean> cir) {
 		if (world.getGameRules().getBoolean(GAMERULE_HOPPER_SPECIAL_BLOCKS)) {
-			if (specialInsert(world, pos, inventory)) {
+			if (specialInsert(world, pos, blockEntity)) {
 				cir.setReturnValue(true);
 			}
 		}
 	}
 
 	@Unique
-	private static boolean specialInsert(World world, BlockPos pos, Inventory inventory) {
+	private static boolean specialInsert(World world, BlockPos pos, HopperBlockEntity blockEntity) {
 		Inventory insert_inventory = getSpecialOutputInventory(world, pos);
 		if (insert_inventory == null) {
 			return false;
-		}
-		Direction direction = Direction.DOWN.getOpposite();
-		if (HopperBlockEntity.isInventoryFull(insert_inventory, direction)) {
-			return false;
-		}
-		for (int i = 0; i < inventory.size(); ++i) {
-			if (inventory.getStack(i).isEmpty()) continue;
-			ItemStack itemStack = inventory.getStack(i).copy();
-			ItemStack insert_itemStack = HopperBlockEntity.transfer(inventory, insert_inventory, inventory.removeStack(i, 1), direction);
-			if (insert_itemStack.isEmpty()) {
-				insert_inventory.markDirty();
-				return true;
+		} else {
+			Direction direction = Direction.DOWN.getOpposite();
+			if (HopperBlockEntity.isInventoryFull(insert_inventory, direction)) {
+				return false;
+			} else {
+				for (int i = 0; i < blockEntity.size(); ++i) {
+					ItemStack itemStack = blockEntity.getStack(i);
+					if (!itemStack.isEmpty()) {
+						int j = itemStack.getCount();
+						ItemStack insert_itemStack = HopperBlockEntity.transfer(blockEntity, insert_inventory, blockEntity.removeStack(i, 1), direction);
+						if (insert_itemStack.isEmpty()) {
+							insert_inventory.markDirty();
+							return true;
+						}
+
+						itemStack.setCount(j);
+						if (j == 1) {
+							blockEntity.setStack(i, itemStack);
+						}
+					}
+				}
+
+				return false;
 			}
-			inventory.setStack(i, itemStack);
 		}
-		return false;
 	}
 
 	@Unique
