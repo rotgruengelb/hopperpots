@@ -1,6 +1,6 @@
 name: Version Port Request
 description: Request a Minecraft Version Port
-title: "[VERSION] Version Port Request"
+title: "[VERSION] ____ Version Port Request"
 labels:
   - version-port
 assignees:
@@ -40,7 +40,7 @@ body:
           required: true
         - label: "I have checked that the requested version was not already requested, including closed issues."
           required: true
-        - label: "I have filled out all blanks in the Request Template."
+        - label: "I have filled out all blanks in the Request Template, including the blank in the Tite!"
           required: true
         - label: "I have clicked these checkboxes without reading them."
           required: true
