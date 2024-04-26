@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "hopperpots",
+	"version": "${version}",
+	"name": "Hopper Pots",
+	"description": "",
+	"authors": [
+		"rotgruengelb"
+	],
+	"contact": {
+		"sources": "https://github.com/rotgruengelb/hopperpots"
+	},
+	"license": "MIT",
+	"icon": "assets/hopperpots/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.rotgruengelb.hopperpots.HopperPots"
+		],
+		"client": [
+			"net.rotgruengelb.hopperpots.HopperPotsClient"
+		]
+	},
+	"mixins": [
+		"hopperpots.mixins.json",
+		{
+			"config": "hopperpots.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=${loader_version}",
+		"minecraft": "~${minecraft_version}",
+		"java": ">=17",
+		"fabric-api": ">=0.96.4+1.20.4",
+		"nixienaut": ">=${nixienaut_version}"
+	}
+}
