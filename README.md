@@ -11,3 +11,9 @@ You can disable the hopper behavior by setting the `hopperSpecialBlocks` gamerul
 ## Dependencies
 - [FabricAPI](https://modrinth.com/mod/fabric-api)
 - [Nixienaut](https://modrinth.com/mod/Nixienaut)
+
+## Additional Credits:
+- Mod Icon: [@PalmDEV/palm1](https://www.youtube.com/@PalmDEV)
+
+# Examples
+![Example Contraption by palm1](https://files.rotgruengelb.net/api/shares/HopperPots-Videos/files/4ce2b214-b9b9-4a04-81f0-35c3ec0172ee?download=false)
