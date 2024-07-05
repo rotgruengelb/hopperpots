@@ -28,7 +28,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=${loader_version}",
-		"minecraft": ">=1.20.5- <1.20.7-",
+		"minecraft": "1.21.X",
 		"java": ">=21",
 		"fabric-api": ">=0.96.4+1.20.4",
 		"nixienaut": ">=${nixienaut_version}"
