@@ -1,4 +1,9 @@
-[![Modrinth](https://raw.githubusercontent.com/Prospector/badges/master/modrinth-badge-72h-padded.png)](https://modrinth.com/mod/hopperpots)
+# Hopper Pots
+
+[![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/mod/hopperpots)
+![fabric-api](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/requires/fabric-api_vector.svg)
+[![Missing Version? Request a Port!](https://raw.githubusercontent.com/rotgruengelb/some-badges/7a75bb3bb1e26c3b250b18b3378780778b813597/Request%20a%20Port/request_a_port-cozy_vector.svg)](https://github.com/rotgruengelb/hopperpots/issues/new?assignees=rotgruengelb&labels=version-port&projects=&template=version_port_request.yml&title=%5BVERSION%5D+____+Version+Port+Request)
+
 
 ![Diagram of the mods functionality](https://cdn.modrinth.com/data/VC49Z5ik/images/d733e48ff96eb2c174035fff05dd4186e20cd4c2.png)
 
